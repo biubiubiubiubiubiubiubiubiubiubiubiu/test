@@ -10,11 +10,11 @@ public class StreamIODemo1 {
 	public static void main(String[] args) {
 		
 		try {
-			//����д�� os ������ָ��·���´����ļ�
-			OutputStream os = new FileOutputStream("C:\\Users\\�Խ���\\Desktop\\abc2.txt");
+			//创建写入 os 对象并在指定路径下创建文件
+			OutputStream os = new FileOutputStream("C:\\Users\\赵金鑫\\Desktop\\abc2.txt");
 			
-			//write()��ֻ��д���֣���ASCII��ֵ
-			//�򴴽����ļ��� д�� ���ݣ�д�������ͬ����ASCII��ֵ��������д����� 66��ASCII���� 66 �����ľ��� ��д��ĸ B�����ļ�����ʾ�ľ��� B
+			//write()里只能写数字，即ASCII码值
+			//向创建的文件里 写入 数据，写入的数据同样是ASCII码值，比如你写入的是 66，ASCII码中 66 代表的就是 大写字母 B，那文件里显示的就是 B
 			os.write(48);  //0
 			os.write(49);  //1
 			os.write(50);  //2
@@ -23,12 +23,13 @@ public class StreamIODemo1 {
 			
 			os.write(60);  //B
 			
-			//�������Ҫ����write()���ļ���д���ʲô�������ļ�����ʾʲô�Ļ���Ҳ���а취��
-			String strContent = "�����ַ���ͨ��ʹ�� getByte()�������д������ݣ���д�����ʲô�����ļ�����ʾ�ľ���ʲô";
+			//但如果非要我用write()向文件中写入的什么，就在文件中显示什么的话，也是有办法的
+			String strContent = "这是字符串通过使用 getByte()这个方法写入的内容，即写入的是什么，在文件里显示的就是什么";
 			os.write(strContent.getBytes());
 			
-			//�ر�
+			//关闭
 			os.close();
+			//，写的不错，努力学习哦
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
