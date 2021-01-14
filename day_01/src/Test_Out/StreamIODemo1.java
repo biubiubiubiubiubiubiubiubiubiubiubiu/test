@@ -29,7 +29,7 @@ public class StreamIODemo1 {
 			
 			//关闭
 			os.close();
-			//你这还拿出来给别人学习，笑话
+			//加油
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
